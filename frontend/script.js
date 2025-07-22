@@ -6,7 +6,7 @@ form.addEventListener("submit", async (e) => {
   const name = document.getElementById("name").value;
   const message = document.getElementById("message").value;
  
-  await fetch("http://localhost:3000/feedback", {
+  await fetch("https://feedback-form-e1oh.onrender.com/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, message }),
@@ -17,7 +17,7 @@ form.addEventListener("submit", async (e) => {
 });
  
 async function loadFeedback() {
-  const res = await fetch("http://localhost:3000/feedback");
+  const res = await fetch("https://feedback-form-e1oh.onrender.com/");
   const data = await res.json();
  
   list.innerHTML = data.map(f => `
